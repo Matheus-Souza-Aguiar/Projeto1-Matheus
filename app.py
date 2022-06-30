@@ -17,7 +17,7 @@ while 'sim'.title():
             return 'Não é possivel dividir por 0'
 
     def subtrai(a,b):
-         return a -  b
+         return a - b
 
 
     Seleção = {1: soma, 2: multiplica, 3: divide, 4: subtrai}   
