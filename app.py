@@ -34,17 +34,25 @@ while 'sim'.title():
     def valor_b():
         return float(input(f'Informe o segundo valor que você deseja calcular: '))
 
+    def segundo_valor_de_a(c):
+        return float(c)
+
     def devolve_conta(a,b):
-        resultado = Selecao[select](a, b)
-        return f'resultado: {resultado}'
+        result = Selecao[select](a, b)
+        return result
 
 
     def continua_conta():
         chama_operacao(select)
-        valor_a()
+        a = segundo_valor_de_a(c)
         valor_b()
-        resultado = Selecao[select](a, b)
-        return f'resultado: {resultado}'
+        print(devolve_conta(a,b))
+
+        seg = input('Deseja continuar o calculo? sim/nao:  ')
+        if seg == 'sim':
+            print(continua_conta())
+        else:
+            return
 
 
     print('Calculadora 1.0\n')
@@ -52,12 +60,14 @@ while 'sim'.title():
     select = chama_operacao(select)
     a = valor_a()
     b = valor_b()
+    c = devolve_conta(a,b)
     print(devolve_conta(a,b))
+
 
     seg = input('Deseja continuar o calculo? sim/nao:  ')
     if seg == 'sim':
-       print(continua_conta())
+        print(continua_conta())
     else:
         cont = input('Deseja fazer uma nova conta sim/nao: ')
         if cont == 'nao':
-           break
+            break
