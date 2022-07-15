@@ -46,14 +46,14 @@ while 'sim'.title():
         chama_operacao(select)
         a = segundo_valor_de_a(c)
         valor_b()
-        print(devolve_conta(a,b))
+        return print(devolve_conta())
+
 
         seg = input('Deseja continuar o calculo? sim/nao:  ')
         if seg == 'sim':
-            print(continua_conta())
+            continua_conta()
         else:
-            return
-
+            return ''
 
     print('Calculadora 1.0\n')
 
