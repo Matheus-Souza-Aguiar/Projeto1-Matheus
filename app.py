@@ -1,73 +1,81 @@
 from select import select
 
 cont = 'sim'
-while 'sim'.title():
-
-    def soma(a, b):
-        return a + b
 
 
-    def multiplica(a, b):
-        return a * b
+def soma(paramtro1, parametro2):
+    return paramtro1 + parametro2
 
 
-    def divide(a, b):
-        try:
-            return a / b
-        except ZeroDivisionError:
-            return 'Não é possivel dividir por zero'
+def multiplica(parametro1, parametro2):
+    return parametro1 * parametro2
 
 
-    def subtrai(a, b):
-        return a - b
+def divide(parametro1, parametro2):
+    try:
+        return parametro1 / parametro2
+    except ZeroDivisionError:
+        return 'Não é possivel dividir por zero'
 
 
-    Selecao = {1: soma, 2: multiplica, 3: divide, 4: subtrai}
-
-    def chama_operacao(select):
-        return int(input('1 - somar\n\n2 - multiplicar\n\n3 - dividir\n\n4 - subtrair\nInforme a operação? '))
+def subtrai(parametro1, parametro2):
+    return parametro1 - parametro2
 
 
-    def valor_a():
-        return float(input(f'Informe o primeiro valor que você deseja calcular: '))
+def chama_operacao(select):
+    select = int(input('1 - somar\n\n2 - multiplicar\n\n3 - dividir\n\n4 - subtrair\nInforme a operação? '))
+    return select
 
-    def valor_b():
-        return float(input(f'Informe o segundo valor que você deseja calcular: '))
+SELECAO = {1: soma, 2: multiplica, 3: divide, 4: subtrai}
 
-    def segundo_valor_de_a(c):
-        return float(c)
-
-    def devolve_conta(a,b):
-        result = Selecao[select](a, b)
-        return result
+def valor_1():
+    return float(input(f'Informe o primeiro valor que você deseja calcular: '))
 
 
-    def continua_conta():
-        chama_operacao(select)
-        a = segundo_valor_de_a(c)
-        valor_b()
-        return print(devolve_conta())
+def valor_2():
+    return float(input(f'Informe o segundo valor que você deseja calcular: '))
 
 
-        seg = input('Deseja continuar o calculo? sim/nao:  ')
-        if seg == 'sim':
-            continua_conta()
-        else:
-            return ''
-
-    print('Calculadora 1.0\n')
-
-    select = chama_operacao(select)
-    a = valor_a()
-    b = valor_b()
-    c = devolve_conta(a,b)
-    print(devolve_conta(a,b))
+def valor_3(c):
+    return float(c)
 
 
-    seg = input('Deseja continuar o calculo? sim/nao:  ')
+def devolve_resultado(a, parametro1, parametro2):
+    result = SELECAO[a](parametro1, parametro2)
+    return result
+
+
+def continua_conta(parametro3):
+    a = chama_operacao(select)
+    parametro1 = parametro3
+    parametro2 = valor_2()
+    parametro3 = devolve_resultado(a, parametro1, parametro2)
+    print(parametro3)
+
+    seg = input('Deseja continuar? sim/nao ' )
     if seg == 'sim':
-        print(continua_conta())
-    else:
-        cont = input('Deseja fazer uma nova conta sim/nao: ')
-        if cont == 'nao':
+        continua_conta(parametro3)
+    elif seg == 'nao':
+        centro()
+
+def centro():
+    while 'sim'.title():
+
+        print('Calculadora 1.0\n')
+
+        a = chama_operacao(select)
+        parametro1 = valor_1()
+        parametro2 = valor_2()
+        parametro3 = devolve_resultado(a, parametro1, parametro2)
+        print(parametro3)
+
+        seg = input('Deseja continuar, fazer nova conta ou finalizar? continuar/nova conta/ finalizar  ')
+        if seg == 'continuar':
+            continua_conta(parametro3)
+        elif seg == 'nova conta':
+            centro()
+        elif seg == 'finalizar':
             break
+
+
+centro()
