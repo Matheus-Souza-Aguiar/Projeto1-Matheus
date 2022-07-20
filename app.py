@@ -1,7 +1,5 @@
 from select import select
 
-cont = 'sim'
-
 
 def soma(paramtro1, parametro2):
     return paramtro1 + parametro2
@@ -33,12 +31,8 @@ def valor_1():
     return float(input(f'Informe o primeiro valor que você deseja calcular: '))
 
 
-
 def valor_2():
     return float(input(f'Informe o segundo valor que você deseja calcular: '))
-
-def valor_3(c):
-    return float(c)
 
 
 def devolve_resultado(a, parametro1, parametro2):
@@ -63,7 +57,7 @@ def continua_conta(parametro3):
     if seg == 's':
         continua_conta(parametro3)
     elif seg == 'n':
-        centro()
+          centro()
 
 
 def centro():
