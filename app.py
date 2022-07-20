@@ -35,13 +35,13 @@ def valor_2():
     return float(input(f'Informe o segundo valor que você deseja calcular: '))
 
 
-def devolve_resultado(a, parametro1, parametro2):
-    result = SELECAO[a](parametro1, parametro2)
+def devolve_resultado(operador, parametro1, parametro2):
+    result = SELECAO[operador](parametro1, parametro2)
     return result
 
 
 def continua_conta(parametro3):
-    a = chama_operacao(select)
+    operador = chama_operacao(select)
     parametro1 = parametro3
     parametro2 = valor_2()
     if parametro2 == 0:
@@ -50,7 +50,7 @@ def continua_conta(parametro3):
             centro()
         elif valor0 == 'v':
             parametro2 = valor_2()
-    parametro3 = devolve_resultado(a, parametro1, parametro2)
+    parametro3 = devolve_resultado(operador, parametro1, parametro2)
     print(parametro3)
 
     seg = input('Deseja continuar? s/n ')
@@ -65,7 +65,7 @@ def centro():
 
         print('Calculadora 1.0\n')
 
-        a = chama_operacao(select)
+        operador = chama_operacao(select)
         parametro1 = valor_1()
         parametro2 = valor_2()
 
@@ -76,7 +76,7 @@ def centro():
             elif valor0 == 'v':
                 parametro2 = valor_2()
 
-        parametro3 = devolve_resultado(a, parametro1, parametro2)
+        parametro3 = devolve_resultado(operador, parametro1, parametro2)
         print(parametro3)
 
         seg = input('Deseja continuar, fazer nova conta ou finalizar? continuar(c)/nova conta(n)/ finalizar(f):  ')
